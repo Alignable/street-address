@@ -499,7 +499,21 @@ module StreetAddress
       "washington" => "WA",
       "west virginia" => "WV",
       "wisconsin" => "WI",
-      "wyoming" => "WY"
+      "wyoming" => "WY",
+      "ontario" => "ON",
+      "alberta" => "ab",
+      "british columbia" => "BC",
+      "manitoba" => "MB",
+      "new brunswick" => "NB",
+      "newfoundland" => "NL",
+      "nova scotia" => "NS",
+      "northwest territories" => "NT",
+      "nunavut" => "NU",
+      "ontario" => "ON",
+      "prince edward island" => "PE",
+      "quebec" => "QC",
+      "saskatchewan" => "SK",
+      "yukon" => "YT"
     }
 
     STATE_NAMES = STATE_CODES.invert
@@ -625,7 +639,7 @@ module StreetAddress
       Regexp::IGNORECASE
     )
     self.dircode_regexp = Regexp.new(DIRECTION_CODES.keys.join("|"), Regexp::IGNORECASE)
-    self.zip_regexp     = /(?:(?<postal_code>\d{5})(?:-?(?<postal_code_ext>\d{4}))?)/
+    self.zip_regexp     = /(?:(?<postal_code>(\d{5})|([A-Z0-9]{3} ?[A-Z0-9]{3}))(?:-?(?<postal_code_ext>\d{4}))?)/
     self.corner_regexp  = /(?:\band\b|\bat\b|&|\@)/iu
 
     # we don't include letters in the number regex because we want to

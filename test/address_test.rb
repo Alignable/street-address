@@ -138,7 +138,20 @@ class AddressTest < MiniTest::Test
     "44 Canal Center Plaza Suite 500, Alexandria, VA 22314" => {
       :line1 => "44 Canal Center Plz Ste 500",
       :line2 => "Alexandria, VA 22314"
-    }
+    },
+    "1010 Easy St, Ottawa, ON" => {
+      :line1 => "1010 Easy St",
+      :line2 => "Ottawa, ON"
+    },
+    "1010 Easy St, Ottawa, ON R3B 2G2" => {
+      :line1 => "1010 Easy St",
+      :line2 => "Ottawa, ON R3B 2G2"
+    },
+    "1010 main street, Vancouver, British Columbia" => {
+      :line1 => "1010 Main St",
+      :line2 => "Vancouver, BC"
+    },
+
   }
 
 
