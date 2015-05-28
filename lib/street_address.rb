@@ -940,16 +940,29 @@ module StreetAddress
           parts << street_type2 if street_type2
           parts << suffix2      if suffix2
         else
-          parts << number
-          parts << prefix if prefix
-          parts << street if street
-          parts << street_type if street_type && !redundant_street_type
-          parts << suffix if suffix
-          parts << unit_prefix if unit_prefix
-          #follow guidelines: http://pe.usps.gov/cpim/ftp/pubs/Pub28/pub28.pdf pg28
-          parts << (unit_prefix ? unit : "\# #{unit}") if unit
+          parts << street_line1
+          parts << street_line2
         end
         s + parts.join(' ').strip
+      end
+
+
+      def street_line1
+        parts = []
+        parts << number
+        parts << prefix if prefix
+        parts << street if street
+        parts << street_type if street_type && !redundant_street_type
+        parts << suffix if suffix
+        parts.join(" ").strip
+      end
+
+      def street_line2
+        parts = []
+        parts << unit_prefix if unit_prefix
+        #follow guidelines: http://pe.usps.gov/cpim/ftp/pubs/Pub28/pub28.pdf pg28
+        parts << (unit_prefix ? unit : "\# #{unit}") if unit
+        parts.join(" ").strip
       end
 
 
