@@ -1,3 +1,4 @@
+# encoding: utf-8
 module StreetAddress
   class US
     VERSION = '2.0.0'
