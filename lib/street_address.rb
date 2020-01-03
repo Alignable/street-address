@@ -501,7 +501,6 @@ module StreetAddress
       "west virginia" => "WV",
       "wisconsin" => "WI",
       "wyoming" => "WY",
-      "ontario" => "ON",
       "alberta" => "ab",
       "british columbia" => "BC",
       "manitoba" => "MB",
